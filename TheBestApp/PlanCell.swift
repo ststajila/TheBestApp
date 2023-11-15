@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-public class PlanCell{
+public class PlanCell: UITableViewCell{
     
     @IBOutlet weak var titleOutlet: UILabel!
     @IBOutlet weak var dateOutlet: UILabel!

@@ -7,15 +7,44 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+class PlanData: Codable{
+    var title: String
+    var date: Date
+    var description: String
+    
+}
 
+class delegate{
+    static var planner: [PlanData] = []
+}
+
+
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    
+    @IBOutlet weak var tableViewOutlet: UITableView!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableViewOutlet.delegate = self
+        tableViewOutlet.dataSource = self
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return delegate.planner.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "planCell") as! PlanCell
+        
+        cell.titleOutlet.text = delegate.planner[indexPath.row].title
+        cell.dateOutlet.text = "\(delegate.planner[indexPath.row].date)"
+        
+        return cell
+    }
+    
     
 
     /*
