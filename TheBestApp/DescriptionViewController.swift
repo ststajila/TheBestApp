@@ -9,10 +9,11 @@ import UIKit
 
 class DescriptionViewController: UIViewController {
 
+    @IBOutlet weak var descriptionOutlet: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        descriptionOutlet.text = delegate.planner[delegate.index].description
     }
     
 

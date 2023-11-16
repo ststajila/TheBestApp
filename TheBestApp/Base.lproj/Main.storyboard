@@ -40,11 +40,11 @@
             <objects>
                 <viewController id="Fpj-Jb-gu2" customClass="ListViewController" customModule="TheBestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pag-8a-XGE">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="V7v-cf-cp6">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="planCell" id="BPF-FZ-ORd" customClass="PlanCell" customModule="TheBestApp" customModuleProvider="target">
@@ -85,6 +85,7 @@
                                         <connections>
                                             <outlet property="dateOutlet" destination="dW6-rz-ZJB" id="paN-xm-2kq"/>
                                             <outlet property="titleOutlet" destination="GPv-ch-bnG" id="b4n-Bn-Oxn"/>
+                                            <segue destination="GS3-2Z-HWz" kind="show" id="VuS-Tf-HWH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -124,7 +125,7 @@
             <objects>
                 <viewController id="fGx-db-0Yv" customClass="AddViewController" customModule="TheBestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E5A-KA-ZW9">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="HGc-hD-xZ0">
@@ -137,11 +138,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TcC-v7-WDZ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="dis" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TcC-v7-WDZ">
                                 <rect key="frame" x="76" y="307" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -151,23 +151,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                <connections>
+                                    <action selector="addAction:" destination="fGx-db-0Yv" eventType="touchUpInside" id="yqb-7e-TrB"/>
+                                    <segue destination="Fpj-Jb-gu2" kind="show" id="x0A-ve-Z4o"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zbh-vZ-lw3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="n9Q-t4-ju3"/>
+                    <connections>
+                        <outlet property="DateOutlet" destination="HGc-hD-xZ0" id="Pjy-AQ-tNN"/>
+                        <outlet property="descriptionOutlet" destination="TcC-v7-WDZ" id="b6k-HR-Qp3"/>
+                        <outlet property="titleOutlet" destination="q4d-Hd-xVw" id="oSS-TM-CQa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHR-GX-bOg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2177.8625954198474" y="754.92957746478874"/>
+            <point key="canvasLocation" x="1752" y="751"/>
         </scene>
         <!--Description View Controller-->
         <scene sceneID="5AV-BG-TBO">
             <objects>
                 <viewController id="GS3-2Z-HWz" customClass="DescriptionViewController" customModule="TheBestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jst-ML-PBS">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZXZ-oY-89J">
@@ -184,6 +193,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="VZw-Rc-y2g"/>
+                    <connections>
+                        <outlet property="descriptionOutlet" destination="ZXZ-oY-89J" id="NVw-gd-RMp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6nZ-pG-bh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,6 +220,11 @@
             <point key="canvasLocation" x="136.64122137404578" y="12.67605633802817"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="KLZ-vQ-Tog"/>
+        <segue reference="IFt-kn-hia"/>
+        <segue reference="x0A-ve-Z4o"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

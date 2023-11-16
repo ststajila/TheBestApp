@@ -9,6 +9,9 @@ import UIKit
 
 class AddViewController: UIViewController {
 
+    @IBOutlet weak var descriptionOutlet: UITextView!
+    @IBOutlet weak var DateOutlet: UIDatePicker!
+    @IBOutlet weak var titleOutlet: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +29,8 @@ class AddViewController: UIViewController {
     }
     */
 
+    @IBAction func addAction(_ sender: Any) {
+        delegate.planner.append(PlanData(title: titleOutlet.text!,date: DateOutlet.date,description: descriptionOutlet.text!))
+        
+    }
 }
