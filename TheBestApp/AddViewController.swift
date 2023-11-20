@@ -38,7 +38,14 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         titleOutlet.resignFirstResponder()
-        descriptionOutlet.resignFirstResponder()
         return true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+                    descriptionOutlet.resignFirstResponder()
+                    return false
+                }
+                return true
     }
 }
