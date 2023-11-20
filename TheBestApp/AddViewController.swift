@@ -16,7 +16,6 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
 
@@ -25,6 +24,11 @@ class AddViewController: UIViewController {
         var customDate =  DateOutlet.date.formatted(date: .numeric, time: .shortened)
         Delegate.planner.append(PlanData(title: titleOutlet.text!, date: customDate,description: descriptionOutlet.text!))
         delViewController.viewDidLoad()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 }
