@@ -19,9 +19,9 @@ class DescriptionViewController: UIViewController {
         
         super.viewDidLoad()
 
-        titleOutlet.text = delegate.planner[delegate.index].title
-        dateOutlet.text = "\(delegate.planner[delegate.index].date)"
-        descriptionOutlet.text = delegate.planner[delegate.index].description
+        titleOutlet.text = Delegate.planner[Delegate.index].title
+        dateOutlet.text = "\(Delegate.planner[Delegate.index].date)"
+        descriptionOutlet.text = Delegate.planner[Delegate.index].description
     }
     
 
