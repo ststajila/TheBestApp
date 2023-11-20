@@ -10,9 +10,17 @@ import UIKit
 class DescriptionViewController: UIViewController {
 
     @IBOutlet weak var descriptionOutlet: UITextView!
+    
+    @IBOutlet weak var titleOutlet: UILabel!
+    
+    @IBOutlet weak var dateOutlet: UILabel!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
+        titleOutlet.text = delegate.planner[delegate.index].title
+        dateOutlet.text = "\(delegate.planner[delegate.index].date)"
         descriptionOutlet.text = delegate.planner[delegate.index].description
     }
     

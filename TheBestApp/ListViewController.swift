@@ -9,10 +9,10 @@ import UIKit
 
 class PlanData: Codable{
     var title: String
-    var date: Date
+    var date: String
     var description: String
    
-    init(title: String, date: Date, description: String) {
+    init(title: String, date: String, description: String) {
         self.title = title
         self.date = date
         self.description = description
@@ -23,8 +23,6 @@ class delegate{
     static var planner: [PlanData] = []
     static var index: Int = 0
     
-    
-    
 }
 
 
@@ -32,8 +30,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 
     @IBOutlet weak var tableViewOutlet: UITableView!
-    
-    
     
     override func viewDidLoad() {
         
@@ -51,7 +47,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "planCell") as! PlanCell
         
         cell.titleOutlet.text = delegate.planner[indexPath.row].title
-        cell.dateOutlet.text = "\(delegate.planner[indexPath.row].date)"
+        
+        cell.dateOutlet.text = delegate.planner[indexPath.row].date
         
         return cell
     }
@@ -68,15 +65,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func sortedByDate(plan: [PlanData]) -> [PlanData]{
         return plan.sorted(by: { $0.date < $1.date })
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "add"{
+            let nvc = segue.destination as! AddViewController
+            nvc.delViewController = self
+        }
     }
-    */
+
 
 }

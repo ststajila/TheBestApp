@@ -9,9 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var qouteOutlet: UILabel!
+    @IBOutlet weak var titleOutlet: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     //This is Brian
 
