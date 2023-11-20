@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var descriptionOutlet: UITextView!
     @IBOutlet weak var DateOutlet: UIDatePicker!
@@ -16,6 +16,10 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleOutlet.delegate = self
+        descriptionOutlet.delegate = self
+        
     }
     
 
@@ -30,5 +34,11 @@ class AddViewController: UIViewController {
     
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        titleOutlet.resignFirstResponder()
+        descriptionOutlet.resignFirstResponder()
+        return true
     }
 }
