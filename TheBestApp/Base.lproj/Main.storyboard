@@ -345,6 +345,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="qoE-fy-BWI"/>
         <segue reference="4JZ-fb-S4d"/>
     </inferredMetricsTieBreakers>
     <resources>

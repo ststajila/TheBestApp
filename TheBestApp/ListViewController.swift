@@ -9,13 +9,15 @@ import UIKit
 
 class PlanData: Codable{
     var title: String
-    var date: String
+    var date: Date
     var description: String
+    var isFavorite: Bool
    
-    init(title: String, date: String, description: String) {
+    init(title: String, date: Date, description: String) {
         self.title = title
         self.date = date
         self.description = description
+        self.isFavorite = false
     }
 }
 
@@ -48,7 +50,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.titleOutlet.text = Delegate.planner[indexPath.row].title
         
-        cell.dateOutlet.text = Delegate.planner[indexPath.row].date
+        cell.dateOutlet.text = Delegate.planner[indexPath.row].date.formatted(date: .numeric, time: .shortened)
         
         return cell
     }

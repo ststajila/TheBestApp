@@ -25,7 +25,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
 
 
     @IBAction func addAction(_ sender: Any) {
-        var customDate =  DateOutlet.date.formatted(date: .numeric, time: .shortened)
+        var customDate =  DateOutlet.date
         Delegate.planner.append(PlanData(title: titleOutlet.text!, date: customDate,description: descriptionOutlet.text!))
         delViewController.viewDidLoad()
         self.dismiss(animated: true, completion: nil)
