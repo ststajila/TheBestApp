@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B2T-yS-RG2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J0b-br-pSh">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881.679389312977" y="12.67605633802817"/>
+            <point key="canvasLocation" x="2808.3969465648852" y="12.67605633802817"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="bNg-i6-ts4">
@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zck-jp-7lQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2678.6259541984732" y="13.380281690140846"/>
+            <point key="canvasLocation" x="3605.3435114503814" y="13.380281690140846"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="iuE-4h-Vbp">
@@ -185,6 +185,12 @@
                                                         <action selector="cancelAction:" destination="fGx-db-0Yv" id="76w-7W-P2w"/>
                                                     </connections>
                                                 </barButtonItem>
+                                                <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="58t-N9-fjx">
+                                                    <rect key="frame" x="118" y="10.666666666666664" width="157" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                </button>
                                                 <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="NEh-Ak-v0y">
                                                     <connections>
                                                         <action selector="addAction:" destination="fGx-db-0Yv" id="6yb-CU-UGA"/>
@@ -314,7 +320,9 @@
                             <constraint firstItem="rho-Re-Dko" firstAttribute="top" secondItem="ZGi-Pd-zOn" secondAttribute="top" id="yEq-zW-KZq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VZw-Rc-y2g"/>
+                    <navigationItem key="navigationItem" id="VZw-Rc-y2g">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="9cg-Y2-C2Z"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateOutlet" destination="69j-fV-i7I" id="KhN-Ye-GI2"/>
                         <outlet property="descriptionOutlet" destination="ZXZ-oY-89J" id="NVw-gd-RMp"/>
@@ -323,29 +331,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6nZ-pG-bh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3649.6183206106871" y="12.67605633802817"/>
+            <point key="canvasLocation" x="4576.3358778625952" y="12.67605633802817"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="fzC-sN-HRu">
+        <scene sceneID="DQR-ts-dkb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B2T-yS-RG2" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J0b-br-pSh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lk3-AV-P76">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xk9-ax-jEa">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="esa-9w-Biq"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="s60-vj-lww"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pXb-wh-7sU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UIC-sx-BcK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954.96183206106866" y="12.67605633802817"/>
+            <point key="canvasLocation" x="1881.679389312977" y="12.67605633802817"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qoE-fy-BWI"/>
         <segue reference="4JZ-fb-S4d"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -353,6 +360,7 @@
         <image name="background" width="1440" height="2560"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="header3D" width="1440" height="380"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
