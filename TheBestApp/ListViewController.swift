@@ -24,19 +24,20 @@ class PlanData: Codable{
 class Delegate{
     static var planner: [PlanData] = []
     static var index: Int = 0
-    
+    static var currentDate: Date = Date.now
 }
 
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
+    
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     override func viewDidLoad() {
         
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
+        Delegate.currentDate = Date.now
         Delegate.planner = sortedByDate(plan: Delegate.planner)
         tableViewOutlet.reloadData()
     }
@@ -47,7 +48,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "planCell") as! PlanCell
-        
+        if(Delegate.currentDate > Delegate.planner[indexPath.row].date){
+            cell.dateOutlet.textColor = UIColor.red
+        } else {
+            cell.dateOutlet.textColor = UIColor.black
+        }
         cell.titleOutlet.text = Delegate.planner[indexPath.row].title
         
         cell.dateOutlet.text = Delegate.planner[indexPath.row].date.formatted(date: .numeric, time: .shortened)
