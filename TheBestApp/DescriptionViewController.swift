@@ -20,19 +20,9 @@ class DescriptionViewController: UIViewController {
         super.viewDidLoad()
 
         titleOutlet.text = Delegate.planner[Delegate.index].title
-        dateOutlet.text = "\(Delegate.planner[Delegate.index].date)"
+        dateOutlet.text = Delegate.planner[Delegate.index].date.formatted(date: .numeric, time: .shortened)
         descriptionOutlet.text = Delegate.planner[Delegate.index].description
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
