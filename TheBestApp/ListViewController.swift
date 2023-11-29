@@ -100,5 +100,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
-
+    @IBAction func addOneDay(_ sender: Any) {
+        for i in 0..<Delegate.planner.count{
+            Delegate.planner[i].date = Calendar.current.date(byAdding: .day, value: 1, to: Delegate.planner[i].date)!
+            
+        }
+        tableViewOutlet.reloadData()
+    }
+    
 }

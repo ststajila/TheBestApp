@@ -161,6 +161,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mWW-S6-b7r">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="BlC-FJ-yy9">
+                            <rect key="frame" x="158.66666666666666" y="5" width="75.666666666666657" height="34.333333333333336"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="+1 Day"/>
+                            <connections>
+                                <action selector="addOneDay:" destination="Fpj-Jb-gu2" eventType="touchUpInside" id="pgh-0c-PY2"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="pR0-dp-CjR">
                             <connections>
                                 <segue destination="fGx-db-0Yv" kind="showDetail" identifier="add" id="EkJ-28-vaU"/>
@@ -196,12 +206,6 @@
                                                         <action selector="cancelAction:" destination="fGx-db-0Yv" id="76w-7W-P2w"/>
                                                     </connections>
                                                 </barButtonItem>
-                                                <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="58t-N9-fjx">
-                                                    <rect key="frame" x="118" y="10.666666666666664" width="157" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
-                                                </button>
                                                 <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="NEh-Ak-v0y">
                                                     <connections>
                                                         <action selector="addAction:" destination="fGx-db-0Yv" id="6yb-CU-UGA"/>
@@ -364,7 +368,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EkJ-28-vaU"/>
         <segue reference="4JZ-fb-S4d"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -372,7 +375,6 @@
         <image name="background" width="1440" height="2560"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="header3D" width="1440" height="380"/>
-        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
