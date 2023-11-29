@@ -32,16 +32,35 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     @IBOutlet weak var tableViewOutlet: UITableView!
-    
+    var loading = true
+    var defaults = UserDefaults()
     override func viewDidLoad() {
-        
+        if (loading == true) {
+            if let items = UserDefaults.standard.data(forKey: "plan") {
+                            let decoder = JSONDecoder()
+                            if let decoded = try? decoder.decode([PlanData].self, from: items) {
+                                Delegate.planner = decoded
+                            }
+                    }
+        }
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(Delegate.planner) {
+                           UserDefaults.standard.set(encoded, forKey: "plan")
+                       }
+        if let items = UserDefaults.standard.data(forKey: "plan") {
+                        let decoder = JSONDecoder()
+                        if let decoded = try? decoder.decode([PlanData].self, from: items) {
+                            Delegate.planner = decoded
+                        }
+                }
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
         Delegate.currentDate = Date.now
         Delegate.planner = sortedByDate(plan: Delegate.planner)
         tableViewOutlet.reloadData()
+        loading = false
     }
-    
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Delegate.planner.count
     }
