@@ -64,6 +64,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if editingStyle == .delete{
             Delegate.planner.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            update()
         }
     }
    
