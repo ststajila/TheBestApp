@@ -25,7 +25,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         descriptionOutlet.text =  Delegate.planner[Delegate.index].description
         DateOutlet.date =  Delegate.planner[Delegate.index].date
         
-        var okAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+        var okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         alert.addAction(okAction)
     }
     

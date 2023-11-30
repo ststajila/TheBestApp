@@ -21,7 +21,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
         titleOutlet.delegate = self
         descriptionOutlet.delegate = self
         
-        var okAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+        var okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         alert.addAction(okAction)
         
     }
