@@ -15,6 +15,8 @@ class DescriptionViewController: UIViewController {
     
     @IBOutlet weak var dateOutlet: UILabel!
     
+    var delViewController: UIViewController!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -22,7 +24,16 @@ class DescriptionViewController: UIViewController {
         titleOutlet.text = Delegate.planner[Delegate.index].title
         dateOutlet.text = Delegate.planner[Delegate.index].date.formatted(date: .numeric, time: .shortened)
         descriptionOutlet.text = Delegate.planner[Delegate.index].description
+        
+        delViewController.viewDidLoad()
+
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "edit"{
+            let nvc = segue.destination as! EditViewController
+            nvc.delViewController = self
+        }
+    }
 
 }

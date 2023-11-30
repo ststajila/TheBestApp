@@ -77,6 +77,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if segue.identifier == "add"{
             let nvc = segue.destination as! AddViewController
             nvc.delViewController = self
+        } else if segue.identifier == "more"{
+            let nvc = segue.destination as! DescriptionViewController
+            nvc.delViewController = self
         }
     }
 

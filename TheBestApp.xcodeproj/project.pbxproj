@@ -21,6 +21,7 @@
 		1485A3952B03C4D400EC2C19 /* TheBestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485A3942B03C4D400EC2C19 /* TheBestAppTests.swift */; };
 		1485A39F2B03C4D400EC2C19 /* TheBestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485A39E2B03C4D400EC2C19 /* TheBestAppUITests.swift */; };
 		1485A3A12B03C4D400EC2C19 /* TheBestAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485A3A02B03C4D400EC2C19 /* TheBestAppUITestsLaunchTests.swift */; };
+		851521CD2B17FC7C00198F08 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851521CC2B17FC7C00198F08 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		1485A39A2B03C4D400EC2C19 /* TheBestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheBestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1485A39E2B03C4D400EC2C19 /* TheBestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBestAppUITests.swift; sourceTree = "<group>"; };
 		1485A3A02B03C4D400EC2C19 /* TheBestAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBestAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		851521CC2B17FC7C00198F08 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				1485A37A2B03C4D300EC2C19 /* AppDelegate.swift */,
 				1485A37C2B03C4D300EC2C19 /* SceneDelegate.swift */,
+				851521CC2B17FC7C00198F08 /* EditViewController.swift */,
 				1437770F2B0517F2000007DF /* AddViewController.swift */,
 				1437770D2B0517D1000007DF /* DescriptionViewController.swift */,
 				1437770B2B0517AA000007DF /* ListViewController.swift */,
@@ -281,6 +284,7 @@
 				1437770E2B0517D1000007DF /* DescriptionViewController.swift in Sources */,
 				1437770C2B0517AA000007DF /* ListViewController.swift in Sources */,
 				1485A3852B03C4D300EC2C19 /* TheBestApp.xcdatamodeld in Sources */,
+				851521CD2B17FC7C00198F08 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
