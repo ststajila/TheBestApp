@@ -13,7 +13,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     @IBOutlet weak var DateOutlet: UIDatePicker!
     @IBOutlet weak var titleOutlet: UITextField!
     var delViewController: UIViewController!
-    var alert = UIAlertController(title: "Error", message: "You need to add a title to add a new event", preferredStyle: .alert)
+    var alert = UIAlertController(title: "Error", message: "You need to add a title to save the event", preferredStyle: .alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
